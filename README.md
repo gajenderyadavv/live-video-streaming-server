@@ -1,5 +1,7 @@
 ## Architecture:
 
+Note:We can use the camera and a Physical/Sowftware Encoder to encode the video from the camera and then send it to the UNix Machine.
+
 OBS-->Stream Config.(refer to Point 2 in suggestions)---Will send the stream from your obs-->Unix Machine
 
 Unix Machine-->Docker-->Nginx-Rtmp_Html Container-->Configured Rtmp endpoint with S3 bucket to push video file to s3 bucket and nginx.conf with ffmpeg for transcoding.
