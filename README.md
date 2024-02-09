@@ -1,4 +1,15 @@
-## How to run
+
+
+## Architecture:
+
+Unix Machine-->Docker-->Nginx-Rtmp_Html Container-->Configured Rtmp endpoint with S3 bucket to push video file to s3 bucket and nginx.conf with ffmpeg for transcoding.
+                    |
+                    |
+                    \-->Node Container for authentication.
+
+S3bucket-->CloudFront-->index.html
+
+## How to Run Current Architecture:
 
 1. Install Docker
 2. `docker-compose build`

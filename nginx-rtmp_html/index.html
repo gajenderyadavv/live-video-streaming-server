@@ -8,10 +8,43 @@
   </head>
   <body>
     <h2>Live Stream</h2>
+
     <video id="video" width="800" controls></video>
+
+    <!-- Transcoded HLS stream -->
+    <video id="transcodedVideo" width="800" controls></video>
+
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <!-- Or if you want a more recent alpha version -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@alpha"></script> -->
+    <script>
+      // Original RTMP stream
+      var video = document.getElementById("video");
+      var videoSrc = "rtmp://your-server-ip/live/stream-key"; // Update with your RTMP stream URL
+      if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+      } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+        video.src = videoSrc;
+      }
+
+      // Transcoded HLS stream
+      var transcodedVideo = document.getElementById("transcodedVideo");
+      var transcodedVideoSrc = "https://your-cloudfront-url/transcoded_hls/stream-key.m3u8"; // Update with your CloudFront URL
+      if (Hls.isSupported()) {
+        var transcodedHls = new Hls();
+        transcodedHls.loadSource(transcodedVideoSrc);
+        transcodedHls.attachMedia(transcodedVideo);
+      } else if (transcodedVideo.canPlayType("application/vnd.apple.mpegurl")) {
+        transcodedVideo.src = transcodedVideoSrc;
+      }
+    </script>
+
+
+
+    <!-- <video id="video" width="800" controls></video>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+     Or if you want a more recent alpha version
+    -- <script src="https://cdn.jsdelivr.net/npm/hls.js@alpha"></script> --
     <script>
       var video = document.getElementById("video");
       var videoSrc = "/hls/test.m3u8";
@@ -36,6 +69,10 @@
       else if (video.canPlayType("application/vnd.apple.mpegurl")) {
         video.src = videoSrc;
       }
-    </script>
+    </script> -->
+
+
+
+
   </body>
 </html>
