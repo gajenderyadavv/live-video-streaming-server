@@ -39,7 +39,7 @@ Terraform Code for infrastructure is to be developed.
 0. Clone this repo using following command
     `git clone https://github.com/gajenderyadavv/video-streamer.git`
 1. Install Docker using following command
-    `curl https://gist.githubusercontent.com/gajenderyadavv/6498d66cd446f5818ad9226c155be852/raw/34c07f7ca6d7162f73011aa25c60571fb9692f45/install-docker-unix | bash`
+    `curl https://gist.githubusercontent.com/gajendra121102/6498d66cd446f5818ad9226c155be852/raw/34c07f7ca6d7162f73011aa25c60571fb9692f45/install-docker-unix | bash`
 
 2. `docker-compose build`
 3. `docker-compose up`
