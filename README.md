@@ -1,8 +1,10 @@
 ## Architecture:
 
-Note:We can use the camera and a Physical/Software Encoder to encode the video from the camera and then send it to the UNix Machine.
+
 
 ![](livestreamer.png)
+
+Note:We can use the camera and a Physical/Software Encoder to encode the video from the camera and then send it to the UNix Machine.
 
 OBS-->Stream Config.(refer to Point 2 in suggestions)---Will send the stream from your obs-->Unix Machine
 
