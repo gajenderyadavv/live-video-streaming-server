@@ -1,6 +1,6 @@
 ## Architecture:
 
-
+Currently Using Azure for all its Deployments and testing.
 
 ![](livestreamer.png)
 
@@ -23,7 +23,7 @@ First of all, Create the S3 Bucket and then congiure its endpoint with CloudFron
 
 ## Modifications to be done in Current Architecture:
 
-K8s Manifestst files be developed for this infrastructure's orchestration.
+K8s Manifestst files be tested for this infrastructure's orchestration.
 
 Documentation for Deployment of this on EKS/AKS/GKE is to be done.
 
@@ -40,6 +40,14 @@ Terraform Code for infrastructure is to be developed.
 3. `docker-compose up`
 4. Open OBS and in settings set the server to `rtmp://server-ip:1935/live` to send video from local machine to server and the stream key to `test?key=supersecret`
 5. Open a browser and go to `http://server-ip:3000` to view your live stream!
+
+
+To push modified Docker images to Azure container Registry(ACR): Make sure you are login into your terminal with your Azure Credentials.
+
+"docker tag image_name registry_name.azurecr.io/image_name" Tagging an image according to the Azure Registry Pushing.
+
+"docker push registry_name.azurecr.io/image_name" Pushing to ACR.
+
 
 ## Suggestions to Noteb before Starting: (Made following suggestions from Chat GPT)
 

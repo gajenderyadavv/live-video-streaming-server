@@ -1,7 +1,7 @@
 version: "3.3"
 services:
   rtmp:
-    build: ./rtmp
+    build: ./nginx-rtmp_html
     ports:
       - "1935:1935"
       - "80:8080"
@@ -10,5 +10,5 @@ services:
       - ./data:/tmp/hls
 
   auth:
-    build: ./auth
+    build: ./rtmp-auth
     container_name: auth_server

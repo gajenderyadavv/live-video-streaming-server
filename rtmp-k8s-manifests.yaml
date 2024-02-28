@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rtmp-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rtmp
+  template:
+    metadata:
+      labels:
+        app: rtmp
+    spec:
+      containers:
+      - name: rtmp-container
+        image: rtmp:1.0
+        ports:
+        - containerPort: 1935
+        - containerPort: 8080
+        volumeMounts:
+        - name: data-volume
+          mountPath: /tmp/hls
+      volumes:
+      - name: data-volume
+        hostPath:
+          path: /path/to/data
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rtmp-service
+spec:
+  selector:
+    app: rtmp
+  ports:
+  - protocol: TCP
+    port: 1935
+    targetPort: 1935
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
