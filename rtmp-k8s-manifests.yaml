@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: rtmp-container
-        image: rtmp:1.0
+        image: registry_image_link--or--local_docker-builds
         ports:
         - containerPort: 1935
         - containerPort: 8080

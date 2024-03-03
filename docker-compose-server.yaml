@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  rtmp:
+    image: "registry_image_link"
+    ports:
+      - "1935:1935"
+      - "80:8080"
+    container_name: rtmp_server
+    volumes:
+      - ./data:/tmp/hls
+
+  auth: 
+    image: "registry_image_link"
+    container_name: auth_server
